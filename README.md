@@ -69,7 +69,8 @@ The request body should be in JSON format and include the following fields:
 ```json
 {
   "username": "Mohammaddalil",
-  "password": "password123"
+  "password": "password123",
+  "confirmPassword": "password123"
 }
 ```
 ### Success Response
@@ -78,8 +79,124 @@ The request body should be in JSON format and include the following fields:
 ```json
 {
   "status": "success",
-  "token": JWT-Token
-  "data": User's Data
+  "token": "JWT-Token"
+  "data": "User's Data"
 }
 ```
 This endpoint allows you to register a new user by sending a POST request to /users/register with the required information in the request body. Upon successful registration, a response with a status code of 201 (Created) and a JSON body containing a success message with a JWT token.
+
+
+### User Login
+
+- URL: `/users/login`
+- Method: `POST`
+- Description: Authenticates a user and returns a token.
+
+#### Request
+
+The request body should be in JSON format and include the following fields:
+
+```json
+{
+  "username": "Mohammaddalil",
+  "password": "password123"
+}
+```
+### Success Response
+- Status Code: 200 (OK)
+- Response Body:
+```json
+{
+  "status": "success",
+  "token": "JWT-Token"
+  "data": "User's Data"
+}
+```
+### Get All Tasks
+
+- URL: `/tasks`
+- Method: `GET`
+- Description: Retrieves a list of all tasks for the authenticated user.
+- Authentication: Include the JWT token in the Authorization header.
+
+### Success Response:
+- Status Code: 200 (OK)
+- Response Body:
+```json
+{
+  "status": "success",
+  "result": "users.length"
+  "data": "users"
+}
+```
+
+### Create a Task
+- URL: `/tasks`
+- Method: `POST`
+- Description: Adds a new task for the authenticated user.
+- Authentication: Include the JWT token in the Authorization header.
+
+### Request Body:
+```json
+{
+  "title": "New Task",
+  "description": "This is a new task"
+}
+```
+### Success Response:
+- Status Code: 201 (Created)
+- Response Body:
+```json
+{
+  "status": "success",
+  "data": "task's data"
+}
+```
+### Get a Task
+- URL: `/tasks/:taskId`
+- Method: `GET`
+- Description: Retrieves the details of a specific task by its ID for the authenticated user.
+- Authentication: Include the JWT token in the Authorization header.
+
+### Success Response:
+- Status Code: 200 (OK)
+- Response Body:
+```json
+{
+  "status": "success",
+  "data": "task's data"
+}
+```
+
+### Update a Task
+- URL: `/tasks/:taskId`
+- Method: `PUT`
+- Description: Update the details of a specific task by its ID for the authenticated user.
+- Authentication: Include the JWT token in the Authorization header.
+
+### Request Body:
+```json
+{
+  "title": "New Task",
+  "description": "This is a new task"
+}
+```
+
+### Success Response:
+- Status Code: 200 (OK)
+- Response Body:
+```json
+{
+  "status": "success",
+  "data": "task's data"
+}
+```
+
+### Delete a Task
+- URL: `/tasks/:taskId`
+- Method: `DELETE`
+- Description: Delete a specific task by its ID for the authenticated user.
+- Authentication: Include the JWT token in the Authorization header.
+
+### Success Response:
+- Status Code: 204 (DELETED)
