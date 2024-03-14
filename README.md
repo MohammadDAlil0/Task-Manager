@@ -210,4 +210,4 @@ You can use and see the APIs using Postman using this link: https://documenter.g
 
 ### Notes
 
-- Changing The Environment: You can set NODE_ENV to be equal to developer or to be equal to production. developer environment will connect to a local database, while the production environmet will connect to an online database(your cluster in mongodb).
+- Changing The Environment: You can set NODE_ENV in your config.env file to be equal to developer or to be equal to production. developer environment will connect to a local database, while the production environmet will connect to an online database(your cluster in mongodb).
