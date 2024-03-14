@@ -42,7 +42,7 @@ npm install
 ```
 3. Set up environment variables:
 
-Create a .env file in the root directory of the project and provide the following variables: 
+Create a config.env file in the root directory of the project and provide the following variables: 
 ```bash
 DATABASE_LOCAL=mongodb://127.0.0.1:27017/TaskManager
 PORT=3000
