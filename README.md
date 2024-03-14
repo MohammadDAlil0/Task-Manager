@@ -18,7 +18,6 @@ This is a RESTful API built with Node.js that allows users to manage their daily
   - [Delete a Task](#delete-a-task)
 - [API Endpoints In Postman](#api-endpoints-in-postman)
 - [Notes](#notes)
-  - [Changing The Environment](#changing-the-environment)
 ## Requirements
 
 To run this project, you will need:
