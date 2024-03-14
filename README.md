@@ -16,6 +16,7 @@ This is a RESTful API built with Node.js that allows users to manage their daily
   - [Get a Task](#get-a-task)
   - [Update a Task](#update-a-task)
   - [Delete a Task](#delete-a-task)
+- [API Endpoints In Postman](#api-endpoints-in-postman) 
 ## Requirements
 
 To run this project, you will need:
@@ -45,6 +46,8 @@ npm install
 Create a config.env file in the root directory of the project and provide the following variables: 
 ```bash
 DATABASE_LOCAL=mongodb://127.0.0.1:27017/TaskManager
+MONGODB_URI=your-mongodb-uri
+MONGODB_KEY=your-mongodb-password
 PORT=3000
 JWT_SECRET=your-secret-key
 JWT_EXPIRE_IN=your-JWT-expire-date
@@ -200,3 +203,6 @@ The request body should be in JSON format and include the following fields:
 
 ### Success Response:
 - Status Code: 204 (DELETED)
+
+### API Endpoints In Postman
+You can use and see the APIs using Postman using this link: https://documenter.getpostman.com/view/27420685/2sA2xmTq3N
