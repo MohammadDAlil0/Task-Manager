@@ -16,7 +16,9 @@ This is a RESTful API built with Node.js that allows users to manage their daily
   - [Get a Task](#get-a-task)
   - [Update a Task](#update-a-task)
   - [Delete a Task](#delete-a-task)
-- [API Endpoints In Postman](#api-endpoints-in-postman) 
+- [API Endpoints In Postman](#api-endpoints-in-postman)
+- [Notes](#notes)
+  - [Changing The Environment](#changing-the-environment)
 ## Requirements
 
 To run this project, you will need:
@@ -206,3 +208,7 @@ The request body should be in JSON format and include the following fields:
 
 ### API Endpoints In Postman
 You can use and see the APIs using Postman using this link: https://documenter.getpostman.com/view/27420685/2sA2xmTq3N
+
+### Notes
+
+- Changing The Environment: You can set NODE_ENV to be equal to developer or to be equal to production. developer environment will connect to a local database, while the production environmet will connect to an online database(your cluster in mongodb).
