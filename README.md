@@ -44,9 +44,11 @@ npm install
 
 Create a .env file in the root directory of the project and provide the following variables: 
 ```bash
+DATABASE_LOCAL=mongodb://127.0.0.1:27017/TaskManager
 PORT=3000
-MONGODB_URI=mongodb://localhost:27017/task-manager
 JWT_SECRET=your-secret-key
+JWT_EXPIRE_IN=your-JWT-expire-date
+NODE_ENV=your-environment-state
 ```
 4. Start the server:
 ```bash
@@ -83,8 +85,6 @@ The request body should be in JSON format and include the following fields:
   "data": "User's Data"
 }
 ```
-This endpoint allows you to register a new user by sending a POST request to /users/register with the required information in the request body. Upon successful registration, a response with a status code of 201 (Created) and a JSON body containing a success message with a JWT token.
-
 
 ### User Login
 
@@ -125,8 +125,8 @@ The request body should be in JSON format and include the following fields:
 ```json
 {
   "status": "success",
-  "result": "users.length"
-  "data": "users"
+  "result": "number-of-tasks"
+  "data": "tasks"
 }
 ```
 
