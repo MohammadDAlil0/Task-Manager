@@ -17,6 +17,9 @@ const sendErrorPro = (err, req, res) => {
 module.exports = (err, req, res, next) => {
     err.statusCode = err.statusCode || 500;
     err.status = err.status || 'fail';
+    if (err.message && err.message.includes('validation')) {
+        err.statusCode = 403;
+    }
     if (err.code === 11000) {
         err.message = `There is another user has this ${Object.keys(err.keyValue)}, please change '${Object.values(err.keyValue)}' and try again!`;
         err.statusCode = 400

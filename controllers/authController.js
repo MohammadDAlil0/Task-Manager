@@ -20,7 +20,7 @@ const createSendToken = (user, statusCode, res) => {
 
 exports.register = catchAsync(async (req, res, next) => {
     const user = await User.create(req.body);
-    user.password = undefined;
+    user.password = user.__v = undefined;
     createSendToken(user, 201, res);
 });
 
@@ -30,7 +30,7 @@ exports.login = catchAsync(async (req, res, next) => {
     if (!user || !await bcrypt.compare(password.toString(), user.password)) {
         return next(new AppError('Incorrect username or password', 400));
     } 
-    user.password = undefined;
+    user.password = user.__v = undefined;
     createSendToken(user, 200, res);
 });
 
